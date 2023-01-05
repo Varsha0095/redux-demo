@@ -3,14 +3,14 @@ const redux = require('redux');
 
 //creating reducer function
 const counterReducer = (state = {counter:0},action) => {
-    if(action.type === 'increment'){
+    if(action.type === 'incrementByTwo'){
         return{
-                counter: state.counter + 1,
+                counter: state.counter + 2,
         }
     }
-    if(action.type === 'decrement'){
+    if(action.type === 'decrementByTwo'){
         return{
-            counter: state.counter - 1,
+            counter: state.counter - 2,
         }
     }
     
@@ -31,6 +31,6 @@ store.subscribe(counterSubscriber);
 
 //dispatching action by calling dispatch method on the store and this method will dispatch an action 
 //where action is a JS object with a type property which acts as identifier
-store.dispatch({type: "increment"})
-store.dispatch({type: 'decrement'})
+store.dispatch({type: "incrementByTwo"})
+store.dispatch({type: 'decrementByTwo'})
 
